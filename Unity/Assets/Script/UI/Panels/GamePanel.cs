@@ -11,7 +11,7 @@ public class GamePanel : AnimatedPanel {
 		}
 	}
     public GameObject GamePlayPrefab;
-
+    public GameObject GamePlayCurrentObject;
 	// Use this for initialization
 	void Awake () {
 		if (_instance != null) {
@@ -27,7 +27,10 @@ public class GamePanel : AnimatedPanel {
 
 	protected override void PanelWillShow ()
 	{
-        GamePlayPrefab.SetActive(true);
+        //GamePlayPrefab.SetActive(true);
+        GamePlayCurrentObject = GameObject.Instantiate(GamePlayPrefab) as GameObject;
+        GamePlayCurrentObject.transform.localPosition = Vector3.zero;
+        GamePlayCurrentObject.transform.localScale = Vector3.one;
     }
 	protected override void PanelDidShow ()
 	{
@@ -42,4 +45,9 @@ public class GamePanel : AnimatedPanel {
 		
 	}
 	#endregion
+
+    public void Clear()
+    {
+        Destroy(GamePlayCurrentObject);
+    }
 }

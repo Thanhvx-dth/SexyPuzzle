@@ -30,4 +30,15 @@ public class ResultPanel : AnimatedPanel {
 		
 	}
 	#endregion
+
+    public void Retry()
+    {
+
+    }
+    public void NextLevel()
+    {
+        CsManager.stageNum++;
+        GameGui.instance.PushPanel("GamePanel");
+    }
+
 }
