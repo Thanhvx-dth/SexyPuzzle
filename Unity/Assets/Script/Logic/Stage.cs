@@ -28,4 +28,5 @@ public class Stage : MonoBehaviour {
         CsManager.stageNum = stageNum;
         GameGui.instance.PushPanel("GamePanel");
     }
+   
 }

@@ -16,4 +16,8 @@ public class StagePanel : AnimatedPanel
 	void Update () {
 	
 	}
+    public void BackStages()
+    {
+        GameGui.instance.PushPanel("StagesPanel");
+    }
 }

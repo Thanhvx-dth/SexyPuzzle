@@ -29,4 +29,8 @@ public class StagesPanel : AnimatedPanel {
 
     }
     #endregion
+    public void BackTitle()
+    {
+        GameGui.instance.PushPanel("TitlePanel");
+    }
 }
