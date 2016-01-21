@@ -12,8 +12,18 @@ public class TitlePanel : AnimatedPanel {
 	
 	protected override void PanelWillShow ()
 	{
-		
-	}
+       
+        int adid = 0;
+        if (!UM_AdManager.IsInited)
+        {
+            UM_AdManager.Init();
+        }
+        if (adid <= 0)
+        {
+            adid = UM_AdManager.CreateAdBanner(TextAnchor.LowerCenter);
+            UM_AdManager.ShowBanner(adid);
+        }
+    }
 	protected override void PanelDidShow ()
 	{
 		
